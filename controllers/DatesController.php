@@ -2,6 +2,12 @@
 
 class DatesController
 {
+    private $primeYearService;
+
+    public function __construct(IPrimeYearService $primeYearService)
+    {
+        $this->primeYearService = $primeYearService;
+    }
 
     public function index()
     {
@@ -9,8 +15,7 @@ class DatesController
     }
     public function table()
     {
-        $primeYearService = App::get('service');
-        $data = $primeYearService->findAll();
+        $data = $this->primeYearService->findAll();
 
         echo json_encode(new TableModel($data));
     }
@@ -21,10 +26,9 @@ class DatesController
             try {
                 //Filtering the input
                 $date = ValidateInput::filter_input($_POST['date']);
-                //Making and object and get the year
-                $primeYearService = App::get('service');
                 //Find and insert prime years
-                $primeYearService->insertPrimes($date);
+                $this->primeYearService->insertPrimes($date);
+
                 require 'views/index.view.php';
             } catch (Exception $ex) {
                 http_response_code(500);

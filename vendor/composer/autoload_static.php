@@ -11,6 +11,7 @@ class ComposerStaticInit03c23a1582c972b2a7cefd77e9c09bed
         'ComposerAutoloaderInit03c23a1582c972b2a7cefd77e9c09bed' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit03c23a1582c972b2a7cefd77e9c09bed' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
         'DatesController' => __DIR__ . '/../..' . '/controllers/DatesController.php',
         'EncryptionHandler' => __DIR__ . '/../..' . '/services/EncryptionHandler.php',
